@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Car.create([
+    {year:1995, make:"Toyota", model:"Corolla"},
+    {year:2002, make:"Toyota", model:"Camry"},
+    {year:2008, make:"Scion", model:"tC"},
+    {year:2012, make:"Ford", model:"Flex"}
+])
+
+# seed data not showing in rails console
