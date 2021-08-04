@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-    has_password_digest
+    has_secure_password
     has_many :cars
 end

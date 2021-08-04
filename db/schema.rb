@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_01_040948) do
+ActiveRecord::Schema.define(version: 2021_08_04_195716) do
+
+  create_table "brands", force: :cascade do |t|
+    t.string "name"
+    t.string "year_created"
+    t.integer "country_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "cars", force: :cascade do |t|
     t.integer "year"
@@ -18,6 +26,22 @@ ActiveRecord::Schema.define(version: 2021_08_01_040948) do
     t.string "color"
     t.integer "brand_id"
     t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.string "uid"
+    t.string "provider"
+    t.integer "car_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

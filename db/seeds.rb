@@ -11,7 +11,7 @@ brand1 = Brand.create(name:"Toyota", year_created:1944)
 user.cars.create([
     {year:1995, color:"green", model:"Corolla", brand: brand1},
     {year:2002, color:"black", model:"Camry", brand: brand1},
-    {year:2008, color:"white", model:"tC"}, brand: brand1,
+    {year:2008, color:"white", model:"tC", brand: brand1},
     {year:2012, color:"blue", model:"Flex", brand: brand1}
 ])
 
