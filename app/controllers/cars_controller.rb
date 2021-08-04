@@ -5,6 +5,7 @@ class CarsController < ApplicationController
     end
 
     def show
+        @car = Car.find_by_id(params[:id])
     end
 
 end
