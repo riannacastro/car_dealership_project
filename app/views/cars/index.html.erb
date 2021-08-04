@@ -1,0 +1,4 @@
+<h1>All Cars:</h1>
+<% @cars.each do |car| %>
+   <h2><%= link_to car.car_details, car_path(car) %></h2>
+<% end %>
