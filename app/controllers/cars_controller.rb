@@ -8,4 +8,13 @@ class CarsController < ApplicationController
         @car = Car.find_by_id(params[:id])
     end
 
+    def new
+
+    end
+
+    def create
+        
+    end
+
+
 end
