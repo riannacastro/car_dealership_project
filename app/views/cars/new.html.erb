@@ -1,0 +1,9 @@
+<h1>Add A New Car:</h1>
+<form method="POST" action='/cars'>
+<input type="hidden" name=authenticity_token value= <%= form_authenticity_token %>">
+<label for="car_brand">Brand: </label>
+<input type="text" name="car[brand]" id="car_brand">
+<label for="car_year">Year: </label>
+<input type="number" name="car[year]" id="car_year">
+<input type="submit" value="Add Car">
+</form>
