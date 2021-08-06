@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 # get '/cars', to: "cars#index"
 # get '/cars/:id', to: "cars#show", as: 'car'
 resources :cars
+resources :brands do 
+  resources :cars, only: [:new, :create, :index]
+end
+resources :users
 end
