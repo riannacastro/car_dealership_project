@@ -7,4 +7,6 @@ resources :brands do
   resources :cars, only: [:new, :create, :index]
 end
 resources :users
+get '/signup', to: "users#new"
+post '/signup', to: "users#create"
 end
