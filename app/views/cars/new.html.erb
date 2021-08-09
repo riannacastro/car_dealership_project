@@ -6,6 +6,8 @@
     <%= f.text_field :model %><br>
     <%= f.label :color %>
     <%= f.text_field :color %><br>
+    <h3>Select An Existing Brand:</h3>
+    <%= f.collection_select :brand_id, Brand.all, :id, :name %>
     <h3>Add A Brand:</h3>
     <%= f.fields_for :brand do |b| %>
         <%= b.label :name %>
