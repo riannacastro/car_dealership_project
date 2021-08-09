@@ -1,10 +1,17 @@
 <h1>Add A New Car:</h1>
 <%= form_for @car do |f| %>
     <%= f.label :year %>
-    <%= f.number_field :year %>
+    <%= f.number_field :year %><br>
     <%= f.label :model %>
-    <%= f.text_field :model %>
+    <%= f.text_field :model %><br>
     <%= f.label :color %>
-    <%= f.text_field :color %>
+    <%= f.text_field :color %><br>
+    <h3>Add A Brand:</h3>
+    <%= f.fields_for :brand do |b| %>
+        <%= b.label :name %>
+        <%= b.text_field :name %><br>
+        <%= b.label :year_created %>
+        <%= b.number_field :year_created %><br>
+    <% end %>
     <%= f.submit %>
 <% end %>
