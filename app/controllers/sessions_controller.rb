@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     end
 
     def create
-
+        u = User.find_by_email(params[:user][:email])
+        if u
     end
 
     def omniauth

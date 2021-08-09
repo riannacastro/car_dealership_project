@@ -13,8 +13,11 @@
   <body>
   <%= link_to "create Car", new_car_path %> |
   <%= link_to "cars", cars_path %> |
+  <% if !logged_in? %>
   <%= button_to "Sign in with Google", '/auth/google_oauth2'%>
+  <% else %>
   <%= link_to "Log Out", logout_path, method: 'delete' %>
+  <% end %>
   <% flash.each do |type, msg| %>
     <%= msg %>
   <% end %>
