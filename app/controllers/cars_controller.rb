@@ -25,6 +25,20 @@ class CarsController < ApplicationController
 
     end
 
+    def edit
+        @car = Car.find_by_id(params[:id])
+    end
+
+    def update
+        @car = Car.find_by_id(params[:id])
+        @car.update(car_params)
+        if @car.valid?
+            redirect_to car_path(@car)
+        else
+            render :edit
+        end
+    end
+
     private
 
     def car_params
