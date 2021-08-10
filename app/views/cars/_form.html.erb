@@ -21,10 +21,7 @@
   <%= f.collection_select :brand_id, Brand.all, :id, :name %>
   <h3>Add A Brand:</h3>
   <%= f.fields_for :brand do |b| %>
-      <%= b.label :name %>
-      <%= b.text_field :name %><br>
-      <%= b.label :year_created %>
-      <%= b.number_field :year_created %><br>
+    <%= render partial: "brands/form", locals: { bp: b } %>
       <h3>Which country is the brand from?</h3>
       <%= b.collection_select :country_id, Country.all, :id, :name %>
       <%= b.fields_for :countries do |c| %>
