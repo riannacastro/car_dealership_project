@@ -2,7 +2,11 @@ class CarsController < ApplicationController
     before_action :redirect_if_not_logged_in?
 
     def index
-        @cars = Car.all
+        if params[:brand_id] && @brand = Brand.find_by_id(params[:brand_id])
+            @cars = @brand.cars
+        else
+            @cars = Car.all
+        end
     end
 
     def show
@@ -10,9 +14,13 @@ class CarsController < ApplicationController
     end
 
     def new
-        @car = Car.new
-       b = @car.build_brand 
-       b.build_country
+        if params[:brand_id] && @brand = Brand.find_by_id(params[:brand_id])
+            @car = Car.new(brand_id: params[:brand_id])
+        else
+            @car = Car.new
+            b = @car.build_brand 
+            b.build_country
+        end
     end
 
     def create

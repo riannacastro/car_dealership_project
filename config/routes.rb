@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   post '/signup', to: "users#create"
   delete '/logout', to: "sessions#destroy"
   
-resources :cars
+resources :cars, only: [:new, :create, :index]
 resources :brands do 
-  resources :cars, only: [:new, :create, :index]
+  resources :cars, shallow: true
 end
 resources :users
 resources :countries
