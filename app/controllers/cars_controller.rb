@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
     before_action :redirect_if_not_logged_in?
+    layout "car"
 
     def index
         if params[:brand_id] && @brand = Brand.find_by_id(params[:brand_id])

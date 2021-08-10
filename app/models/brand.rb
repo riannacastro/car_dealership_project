@@ -1,5 +1,6 @@
 class Brand < ApplicationRecord
     has_many :cars
+    has_many :users, through: :cars
     belongs_to :country
     validates :name, presence: true
     validates :year_created, presence: true
