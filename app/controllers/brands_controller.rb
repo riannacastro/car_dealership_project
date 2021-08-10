@@ -4,9 +4,11 @@ class BrandsController < ApplicationController
         @brands = Brand.all 
     end
 
+    def
+
     def new
         @brand = Brand.new
-        @brand.build_country
+
     end
 
 
