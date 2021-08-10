@@ -1,4 +1,16 @@
 <h1>Edit your current car:</h1>
+<% if @car.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
+
+    <ul>
+      <% @car.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @car do |f| %>
     <%= f.label :year %>
     <%= f.number_field :year %><br>
@@ -14,6 +26,12 @@
         <%= b.text_field :name %><br>
         <%= b.label :year_created %>
         <%= b.number_field :year_created %><br>
+        <h3>Which country is the brand from?</h3>
+        <%= b.fields_for :countries do |c| %>
+           <%= c.label :name %>
+           <%= c.text_field :name %>
+           <% end %>
     <% end %>
     <%= f.submit %>
 <% end %>
+

@@ -2,6 +2,7 @@ class Car < ApplicationRecord
     belongs_to :user
     belongs_to :brand
     accepts_nested_attributes_for :brand
+    
 
     def brand_attributes=(hash_of_attributes)
         if !hash_of_attributes["name"].blank? && !hash_of_attributes["year_created"].blank?
@@ -9,6 +10,8 @@ class Car < ApplicationRecord
         end
 
     end
+
+    
 
     validates :year, numericality: {greater_than: 1900, less_than: 2021, message: "Please choose the correct year."}
     validates :color, presence: true, uniqueness: {scope: [:model]}

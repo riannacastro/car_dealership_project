@@ -11,12 +11,14 @@ class CarsController < ApplicationController
 
     def new
         @car = Car.new
-        @car.build_brand
+       b = @car.build_brand 
+       b.build_country
     end
 
     def create
         @car = Car.new(car_params)
-
+        #byebug
+        @car.user = current_user
         if @car.save
             redirect_to cars_path
         else
@@ -49,7 +51,7 @@ class CarsController < ApplicationController
     private
 
     def car_params
-        params.require(:car).permit(:year, :model, :color, :brand_id, brand_attributes: [:name, :year_created])
+        params.require(:car).permit(:year, :model, :color, :brand_id, brand_attributes: [:name, :year_created, :country_id, country_attributes: [:name]])
     end
 
 

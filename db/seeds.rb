@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 user = User.create(email:"abc@gmail.com", password:"1111")
-brand1 = Brand.create(name:"Toyota", year_created:1944)
+country1 = Country.create(name: "India")
+brand1 = Brand.create(name:"Toyota", year_created:1944, country: country1)
 
 user.cars.create([
     {year:1995, color:"green", model:"Corolla", brand: brand1},
