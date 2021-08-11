@@ -1,14 +1,4 @@
-<% if @car.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
-
-  <ul>
-    <% @car.errors.each do |error| %>
-      <li><%= error.full_message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+<%= render partial: "layouts/error", locals: { object: @car } %>
 
 <%= form_for @car do |f| %>
   <%= f.label :year %>

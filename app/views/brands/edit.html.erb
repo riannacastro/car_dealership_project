@@ -1,16 +1,6 @@
-<% if @brand.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
+<h1>Edit A Brand:</h1>
+<%= render partial: "layouts/error", locals: { object: @brand } %>
 
-  <ul>
-    <% @brand.errors.each do |error| %>
-      <li><%= error.full_message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-
-<h1>Add A Brand:</h1>
 <%= form_for(@brand) do |f| %>
     <%= render partial: "form", locals: { bp: f } %>
     <h3>Add Cars:</h3>
@@ -22,6 +12,12 @@
         <%= c.label :color %>
         <%= c.text_field :color %><br>
         <% end %>
+        <h3>Which country is the brand from?</h3>
+        <%= f.collection_select :country_id, Country.all, :id, :name %>
+        <%= f.fields_for :countries do |d| %>
+           <%= d.label :name %>
+           <%= d.text_field :name %>
+           <% end %>
         <br>
     <%= f.submit %>
 <% end %>

@@ -13,7 +13,7 @@ class Car < ApplicationRecord
 
     
 
-    validates :year, numericality: {greater_than: 1900, less_than: 2021, message: "Please choose the correct year."}
+    validates :year, numericality: {greater_than: 1900, less_than: 2021}
     validates :color, presence: true, uniqueness: {scope: [:model]}
     
 
