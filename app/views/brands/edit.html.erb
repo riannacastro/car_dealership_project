@@ -1,5 +1,6 @@
 <h1>Edit A Brand:</h1>
-<%= render partial: "layouts/error", locals: { object: @brand } %>
+
+<%= render partial: "layouts/error", locals: { object: @brand } %> 
 
 <%= form_for(@brand) do |f| %>
     <%= render partial: "form", locals: { bp: f } %>
