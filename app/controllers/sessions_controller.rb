@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
     
-    def welcome
+    def home
+        render :"layouts/home"
     end
 
     def new
