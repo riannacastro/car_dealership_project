@@ -14,15 +14,7 @@
   <%= link_to "Create Car", new_car_path %> |
   <%= link_to "Cars", cars_path %> |
   <%= link_to "Brands", brands_path %> |
-  <%= link_to "Create Brand", new_brand_path %> |
-  <% if !logged_in? %>
-  <%= button_to "Sign in with Google", '/auth/google_oauth2'%>
-  <% else %>
-  <%= link_to "Log Out", logout_path, method: 'delete' %>
-  <% end %>
-  <% flash.each do |type, msg| %>
-    <%= msg %>
-  <% end %>
+  <%= link_to "Create Brand", new_brand_path %> 
     <%= yield %>
   </body>
 </html>
