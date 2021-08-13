@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
         else
         end
 
-       # byebug
+       
     end
 
     def destroy

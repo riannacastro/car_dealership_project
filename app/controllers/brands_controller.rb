@@ -1,12 +1,13 @@
 class BrandsController < ApplicationController
     before_action :redirect_if_not_logged_in?
+    before_action :find_brand, only: [:show, :edit, :update, :destroy]
 
     def index
         @brands = Brand.all 
     end
 
     def show
-        @brand = Brand.find_by_id(params[:id])
+        
     end
 
 
@@ -25,11 +26,10 @@ class BrandsController < ApplicationController
     end
 
     def edit
-        @brand = Brand.find_by_id(params[:id])
+    
     end
 
     def update
-        @brand = Brand.find_by_id(params[:id])
         if @brand.valid?
             @brand.update(brand_params)
             redirect_to brand_path(@brand)
@@ -39,7 +39,6 @@ class BrandsController < ApplicationController
     end
 
     def destroy
-        @brand = Brand.find_by_id(params[:id])
         @brand.destroy
     end
 
@@ -47,6 +46,10 @@ class BrandsController < ApplicationController
 
     def brand_params
         params.require(:brand).permit(:name, :year_created, :country_id, country_attributes: [:name])
+    end
+
+    def find_brand
+        @brand = Brand.find_by_id(params[:id])
     end
 
 end
