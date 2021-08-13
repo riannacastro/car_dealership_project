@@ -7,7 +7,7 @@ class CarsController < ApplicationController
         if params[:brand_id] && @brand = Brand.find_by_id(params[:brand_id])
             @cars = @brand.cars
         else
-            @cars = Car.all
+            @cars = Car.order_by_year
         end
     end
 

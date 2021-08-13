@@ -3,6 +3,7 @@ class Car < ApplicationRecord
     belongs_to :brand
     accepts_nested_attributes_for :brand
     
+    scope :order_by_year, -> {order(:year)}
 
     def brand_attributes=(hash_of_attributes)
         if !hash_of_attributes["name"].blank? && !hash_of_attributes["year_created"].blank?
@@ -10,6 +11,8 @@ class Car < ApplicationRecord
         end
 
     end
+
+
 
     
 
