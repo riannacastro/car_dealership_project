@@ -13,6 +13,7 @@ class BrandsController < ApplicationController
 
     def new
         @brand = Brand.new
+        @brand.build_country
     end
 
 
