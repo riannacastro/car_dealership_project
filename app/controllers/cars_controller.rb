@@ -17,7 +17,7 @@ class CarsController < ApplicationController
 
     def new
         if params[:brand_id] && @brand = Brand.find_by_id(params[:brand_id])
-            @car = Car.new(brand_id: params[:brand_id])
+            @car = @brand.cars.build
         else
             @car = Car.new
             b = @car.build_brand 
@@ -27,6 +27,7 @@ class CarsController < ApplicationController
 
     def create
         @car = Car.new(car_params)
+        
         @car.user = current_user
         if @car.save
             redirect_to cars_path

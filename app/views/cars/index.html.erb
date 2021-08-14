@@ -1,6 +1,10 @@
 <%= index_header_brand %> 
 
-
 <% @cars.each do |car| %>
    <h2><%= link_to car.car_details, car_path(car) %></h2>
 <% end %>
+
+<% if @brand %>
+    <%= link_to "Edit Brand", edit_brand_path(@brand) %>
+<% end %>
+

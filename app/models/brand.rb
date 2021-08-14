@@ -7,6 +7,7 @@ class Brand < ApplicationRecord
     accepts_nested_attributes_for :country
 
     def country_attributes=(hash_of_attributes)
+        
         if !hash_of_attributes["name"].blank?
             self.country = Country.find_or_create_by(hash_of_attributes)
         end

@@ -2,3 +2,5 @@
 <% @brands.each do |brand| %>
    <h2><%= link_to brand.brand_details, brand_cars_path(brand) %></h2>
 <% end %>
+
+<%= link_to "Create New Brand", new_brand_path %>

@@ -17,7 +17,8 @@ class Car < ApplicationRecord
     
 
     validates :year, numericality: {greater_than: 1900, less_than: 2021}
-    validates :color, presence: true, uniqueness: {scope: [:model]}
+    validates :color, :model, presence: true
+
     
 
     def car_details
