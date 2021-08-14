@@ -9,7 +9,10 @@ class Brand < ApplicationRecord
     def country_attributes=(hash_of_attributes)
         
         if !hash_of_attributes["name"].blank?
-            self.country = Country.find_or_create_by(hash_of_attributes)
+            @country = Country.new(hash_of_attributes)
+            if !Country.find_by_name(@country.name)
+                @country.save
+            end
         end
 
     end
