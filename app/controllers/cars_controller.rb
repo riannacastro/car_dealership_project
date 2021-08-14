@@ -22,6 +22,7 @@ class CarsController < ApplicationController
             @car = Car.new
             b = @car.build_brand 
             b.build_country
+            
         end
     end
 
