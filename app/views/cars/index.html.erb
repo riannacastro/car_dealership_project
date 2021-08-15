@@ -4,9 +4,12 @@
    <h2><%= link_to car.car_details, car_path(car) %></h2>
 <% end %>
 
+
 <% if @brand %>
-    <%= link_to "Edit Brand", edit_brand_path(@brand) %>
-<% end %> 
+    <%= link_to "About This Brand", brand_path(@brand) %>
+    <% end %>
 
-
+<% if @brand %>
+    <%= link_to "Create #{@brand.name} Car", new_brand_car_path(@brand) %>
+    <% end %>
 
