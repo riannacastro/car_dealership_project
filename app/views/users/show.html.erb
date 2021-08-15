@@ -1,1 +1,12 @@
-<%= @user.email %>
+| <%= @user.email %>
+
+<% if @user.cars.empty? %>
+<p>You currently have no cars available.</p>
+<% else %>
+<h1>Your cars:</h1>
+    <% @user.cars.each do |c| %>
+    <ul>
+    <h2><%= link_to c.car_details, car_path(c) %></h2>
+    </ul>
+    <% end %>
+ <% end %>

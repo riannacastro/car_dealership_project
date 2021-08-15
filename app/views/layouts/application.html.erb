@@ -13,8 +13,10 @@
   <body>
   <%= link_to "Create Car", new_car_path %> |
   <%= link_to "Cars", cars_path %> |
-  <%= link_to "Brands", brands_path %> |
-  <%= link_to "Log Out", logout_path, method: 'delete' %>
+  <%= link_to "Brands", brands_path %> 
+  <% if logged_in? %>
+  | <%= link_to "Log Out", logout_path, method: 'delete' %>
+  <% end %>
     <%= yield %>
   </body>
 </html>

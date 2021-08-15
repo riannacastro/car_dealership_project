@@ -12,10 +12,14 @@
     <body>
 
     <h1>Rianna's Car Dealership</h1>
+    <% if logged_in? %>
+    
+    <p>You currently have no cars available</p>
+    
+    <% else %>
     <%= link_to "Sign In", login_path %>
     or<br>
     <%= link_to "Sign Up", signup_path %> 
-    
     <p>Or</p>
     <% if !logged_in? %>
   <%= button_to "Sign in with Google", '/auth/google_oauth2'%>
@@ -24,7 +28,8 @@
   <% end %>
   <% flash.each do |type, msg| %>
     <%= msg %>
-  <% end %>
+    <% end %>
+    <% end %>
 
 
     </body>

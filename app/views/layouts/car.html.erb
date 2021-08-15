@@ -11,8 +11,9 @@
   </head>
 
   <body>
+  <%= link_to "Your Cars", user_path(current_user) %> |
   <%= link_to "Create Car", new_car_path %> |
-  <%= link_to "Cars", cars_path %> |
+  <%= link_to "All Cars", cars_path %> |
   <%= link_to "Brands", brands_path %> |
   <% if !logged_in? %>
   <%= button_to "Sign in with Google", '/auth/google_oauth2'%>

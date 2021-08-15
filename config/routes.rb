@@ -14,6 +14,6 @@ resources :cars, only: [:new, :create, :index]
 resources :brands do 
   resources :cars, shallow: true
 end
-resources :users
+resources :users, only: [:show]
 resources :countries
 end
