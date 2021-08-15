@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
     before_action :redirect_if_not_logged_in?
+    before_action :redirect_if_not_authorized, only: [:update, :edit, :destroy]
     before_action :find_car, only: [:show, :update, :edit, :destroy]
     layout "car"
 
