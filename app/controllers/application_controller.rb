@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
     def redirect_if_not_authorized
         @user = User.find(params[:id])
         if @user != current_user
-            redirect_to cars_path(@car)
+            redirect_to cars_path(car)
         end
     end
 
