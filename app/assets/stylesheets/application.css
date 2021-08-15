@@ -19,20 +19,18 @@
     display: table;
   }
 
+  body {
 
-  body, html {
-    height: 100%;
-  }
-  
-  .bg {
-    /* The image used */
-    background-image: url("../images/road.jpeg");
-  
-    /* Full height */
-    height: 100%;
-  
-    /* Center and scale the image nicely */
-    background-position: center;
+    background-image: url('/assets/bpic.png');
+    background-size: cover; 
     background-repeat: no-repeat;
-    background-size: cover;
+
+    text-align: center;
+    color: black;   
+
+
+
   }
+
+  
+ 
