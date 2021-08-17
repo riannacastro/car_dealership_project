@@ -1,6 +1,7 @@
 class CarsController < ApplicationController
     before_action :redirect_if_not_logged_in?
     before_action :find_car, only: [:show, :update, :edit, :destroy]
+    before_action :car_owner, only: [:edit, :update, :destroy]
     layout "car"
 
     def index
